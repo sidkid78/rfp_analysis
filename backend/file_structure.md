@@ -1,0 +1,39 @@
+// File structure
+/*
+/app
+  /api
+    /analyze-rfp/route.ts
+  /components
+    /dashboard
+      DashboardMetrics.tsx
+      RecommendationsList.tsx
+      SectionAnalysis.tsx
+    /forms
+      UploadForm.tsx
+    /layout
+      Navbar.tsx
+      Sidebar.tsx
+    /results
+      AnalysisResults.tsx
+      ExecutiveSummary.tsx
+      SectionDetail.tsx
+  /lib
+    /analyzers
+      baseAnalyzer.ts
+      introductionAnalyzer.ts
+      sowAnalyzer.ts
+      // ... other analyzer files
+    rfpAnalyzer.ts
+  /utils
+    extractors.ts
+    formatters.ts
+  /types
+    index.ts
+  /constants
+    criteria.ts
+    keywords.ts
+  /page.tsx
+  /analyze/page.tsx
+  /results/[id]/page.tsx
+  layout.tsx
+*/
