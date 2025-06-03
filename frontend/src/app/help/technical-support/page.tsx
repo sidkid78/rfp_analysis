@@ -24,11 +24,11 @@ export default function TechnicalSupportPage() {
                 Technical Support
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-400">
-                Troubleshooting guides and technical assistance for the RFP Analyzer platform
+                Troubleshooting guides and technical assistance for optimal platform performance
               </p>
             </div>
 
-            {/* Common Issues */}
+            {/* Common Issues & Solutions */}
             <section className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
                 <span className="w-8 h-8 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center text-white text-sm font-bold mr-3">1</span>
@@ -38,43 +38,37 @@ export default function TechnicalSupportPage() {
               <div className="space-y-6">
                 {/* Upload Issues */}
                 <div className="bg-gradient-to-r from-red-50 to-pink-50 dark:from-red-900/20 dark:to-pink-900/20 rounded-xl border border-red-200/50 dark:border-red-700/50 p-6">
-                  <h3 className="text-lg font-semibold text-red-800 dark:text-red-300 mb-4 flex items-center">
-                    <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.268 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                  <h3 className="text-xl font-semibold text-red-800 dark:text-red-300 mb-4 flex items-center">
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                     </svg>
-                    File Upload Problems
+                    File Upload Issues
                   </h3>
                   
                   <div className="space-y-4">
                     <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
-                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Issue: &quot;File upload failed&quot;</h4>
-                      <p className="text-gray-700 dark:text-gray-300 text-sm mb-3">
-                        The file upload process is interrupted or fails to complete.
-                      </p>
-                      <div className="bg-gray-50 dark:bg-gray-700 rounded p-3">
-                        <p className="text-sm font-medium text-gray-900 dark:text-white mb-2">Solutions:</p>
-                        <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
-                          <li>• Check file size (max 50MB)</li>
-                          <li>• Ensure stable internet connection</li>
-                          <li>• Try a different browser</li>
-                          <li>• Clear browser cache and cookies</li>
-                          <li>• Disable browser extensions temporarily</li>
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Problem: File upload fails or times out</h4>
+                      <div className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
+                        <p><strong>Solutions:</strong></p>
+                        <ul className="list-disc list-inside space-y-1 ml-4">
+                          <li>Ensure file size is under 50MB</li>
+                          <li>Check your internet connection stability</li>
+                          <li>Try uploading during off-peak hours</li>
+                          <li>Clear browser cache and cookies</li>
+                          <li>Disable browser extensions temporarily</li>
                         </ul>
                       </div>
                     </div>
-
+                    
                     <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
-                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Issue: &quot;Unsupported file format&quot;</h4>
-                      <p className="text-gray-700 dark:text-gray-300 text-sm mb-3">
-                        The uploaded file format is not recognized by the system.
-                      </p>
-                      <div className="bg-gray-50 dark:bg-gray-700 rounded p-3">
-                        <p className="text-sm font-medium text-gray-900 dark:text-white mb-2">Solutions:</p>
-                        <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
-                          <li>• Use supported formats: PDF, DOCX, DOC, TXT, MD</li>
-                          <li>• Convert your file to a supported format</li>
-                          <li>• Ensure file is not corrupted</li>
-                          <li>• Check file extension matches content</li>
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Problem: &quot;File format not supported&quot; error</h4>
+                      <div className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
+                        <p><strong>Solutions:</strong></p>
+                        <ul className="list-disc list-inside space-y-1 ml-4">
+                          <li>Convert file to supported format (PDF, DOCX, DOC, TXT)</li>
+                          <li>Ensure file is not password-protected</li>
+                          <li>Check file is not corrupted by opening in original application</li>
+                          <li>Save as PDF if using uncommon document format</li>
                         </ul>
                       </div>
                     </div>
@@ -82,43 +76,76 @@ export default function TechnicalSupportPage() {
                 </div>
 
                 {/* Analysis Issues */}
-                <div className="bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-xl border border-yellow-200/50 dark:border-yellow-700/50 p-6">
-                  <h3 className="text-lg font-semibold text-yellow-800 dark:text-yellow-300 mb-4 flex items-center">
-                    <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="bg-gradient-to-r from-orange-50 to-yellow-50 dark:from-orange-900/20 dark:to-yellow-900/20 rounded-xl border border-orange-200/50 dark:border-orange-700/50 p-6">
+                  <h3 className="text-xl font-semibold text-orange-800 dark:text-orange-300 mb-4 flex items-center">
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                     </svg>
-                    Analysis Problems
+                    Analysis Processing Issues
                   </h3>
                   
                   <div className="space-y-4">
                     <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
-                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Issue: &quot;Analysis taking too long&quot;</h4>
-                      <p className="text-gray-700 dark:text-gray-300 text-sm mb-3">
-                        The analysis process seems stuck or is taking longer than expected.
-                      </p>
-                      <div className="bg-gray-50 dark:bg-gray-700 rounded p-3">
-                        <p className="text-sm font-medium text-gray-900 dark:text-white mb-2">Expected Times:</p>
-                        <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
-                          <li>• Rule-based analysis: 30-60 seconds</li>
-                          <li>• AI analysis: 2-5 minutes</li>
-                          <li>• Large documents may take longer</li>
-                          <li>• Refresh page if stuck for &gt;10 minutes</li>
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Problem: Analysis takes too long or gets stuck</h4>
+                      <div className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
+                        <p><strong>Solutions:</strong></p>
+                        <ul className="list-disc list-inside space-y-1 ml-4">
+                          <li>Wait up to 5 minutes for large documents (normal processing time)</li>
+                          <li>Refresh the page and check if analysis completed</li>
+                          <li>Try again with a smaller document to test system</li>
+                          <li>Contact support if issue persists beyond 10 minutes</li>
                         </ul>
                       </div>
                     </div>
-
+                    
                     <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
-                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Issue: &quot;Poor section detection&quot;</h4>
-                      <p className="text-gray-700 dark:text-gray-300 text-sm mb-3">
-                        The system is not correctly identifying RFP sections.
-                      </p>
-                      <div className="bg-gray-50 dark:bg-gray-700 rounded p-3">
-                        <p className="text-sm font-medium text-gray-900 dark:text-white mb-2">Improvements:</p>
-                        <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
-                          <li>• Use clear section headings</li>
-                          <li>• Follow standard RFP structure</li>
-                          <li>• Avoid image-only PDFs</li>
-                          <li>• Try AI analysis for better detection</li>
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Problem: Poor analysis quality or missing sections</h4>
+                      <div className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
+                        <p><strong>Solutions:</strong></p>
+                        <ul className="list-disc list-inside space-y-1 ml-4">
+                          <li>Ensure document has clear section headings</li>
+                          <li>Use searchable PDF (not scanned image)</li>
+                          <li>Check document formatting is consistent</li>
+                          <li>Remove excessive whitespace or formatting</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Browser Issues */}
+                <div className="bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-xl border border-purple-200/50 dark:border-purple-700/50 p-6">
+                  <h3 className="text-xl font-semibold text-purple-800 dark:text-purple-300 mb-4 flex items-center">
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
+                    </svg>
+                    Browser-Related Issues
+                  </h3>
+                  
+                  <div className="space-y-4">
+                    <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Problem: Interface not loading properly</h4>
+                      <div className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
+                        <p><strong>Solutions:</strong></p>
+                        <ul className="list-disc list-inside space-y-1 ml-4">
+                          <li>Hard refresh the page (Ctrl+F5 or Cmd+Shift+R)</li>
+                          <li>Clear browser cache and reload</li>
+                          <li>Disable ad blockers and privacy extensions</li>
+                          <li>Try in incognito/private browsing mode</li>
+                          <li>Switch to a supported browser (Chrome, Firefox, Safari, Edge)</li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Problem: Buttons or features not working</h4>
+                      <div className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
+                        <p><strong>Solutions:</strong></p>
+                        <ul className="list-disc list-inside space-y-1 ml-4">
+                          <li>Enable JavaScript in browser settings</li>
+                          <li>Update browser to latest version</li>
+                          <li>Check if popup blockers are preventing actions</li>
+                          <li>Try different browser or device</li>
                         </ul>
                       </div>
                     </div>
@@ -137,79 +164,86 @@ export default function TechnicalSupportPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Supported Formats */}
                 <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-xl border border-green-200/50 dark:border-green-700/50 p-6">
-                  <h3 className="text-lg font-semibold text-green-800 dark:text-green-300 mb-4 flex items-center">
-                    <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <h3 className="text-xl font-semibold text-green-800 dark:text-green-300 mb-4 flex items-center">
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     Supported Formats
                   </h3>
                   
                   <div className="space-y-3">
-                    <div className="flex items-center space-x-3">
-                      <span className="w-8 h-8 bg-red-100 dark:bg-red-900/30 rounded flex items-center justify-center text-red-600 dark:text-red-400 text-xs font-bold">PDF</span>
-                      <div>
-                        <p className="text-sm font-medium text-gray-900 dark:text-white">PDF Documents</p>
-                        <p className="text-xs text-gray-600 dark:text-gray-400">Text-searchable PDFs preferred</p>
+                    {[
+                      { format: 'PDF', description: 'Portable Document Format - Preferred for best analysis', icon: '📄' },
+                      { format: 'DOCX', description: 'Microsoft Word (2007+) - Good text extraction', icon: '📝' },
+                      { format: 'DOC', description: 'Microsoft Word (Legacy) - Basic support', icon: '📃' },
+                      { format: 'TXT', description: 'Plain text - Simple but effective', icon: '📋' }
+                    ].map((item) => (
+                      <div key={item.format} className="bg-white dark:bg-gray-800 rounded-lg p-3 flex items-center space-x-3">
+                        <span className="text-2xl">{item.icon}</span>
+                        <div>
+                          <h4 className="font-semibold text-gray-900 dark:text-white">{item.format}</h4>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">{item.description}</p>
+                        </div>
                       </div>
-                    </div>
-                    
-                    <div className="flex items-center space-x-3">
-                      <span className="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded flex items-center justify-center text-blue-600 dark:text-blue-400 text-xs font-bold">DOC</span>
-                      <div>
-                        <p className="text-sm font-medium text-gray-900 dark:text-white">Word Documents</p>
-                        <p className="text-xs text-gray-600 dark:text-gray-400">DOCX and DOC formats</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center space-x-3">
-                      <span className="w-8 h-8 bg-gray-100 dark:bg-gray-700 rounded flex items-center justify-center text-gray-600 dark:text-gray-400 text-xs font-bold">TXT</span>
-                      <div>
-                        <p className="text-sm font-medium text-gray-900 dark:text-white">Plain Text</p>
-                        <p className="text-xs text-gray-600 dark:text-gray-400">UTF-8 encoding recommended</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center space-x-3">
-                      <span className="w-8 h-8 bg-purple-100 dark:bg-purple-900/30 rounded flex items-center justify-center text-purple-600 dark:text-purple-400 text-xs font-bold">MD</span>
-                      <div>
-                        <p className="text-sm font-medium text-gray-900 dark:text-white">Markdown</p>
-                        <p className="text-xs text-gray-600 dark:text-gray-400">.md and .markdown files</p>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
 
-                {/* Best Practices */}
+                {/* File Requirements */}
                 <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl border border-blue-200/50 dark:border-blue-700/50 p-6">
-                  <h3 className="text-lg font-semibold text-blue-800 dark:text-blue-300 mb-4 flex items-center">
-                    <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  <h3 className="text-xl font-semibold text-blue-800 dark:text-blue-300 mb-4 flex items-center">
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                     </svg>
-                    Best Practices
+                    Requirements
                   </h3>
                   
-                  <ul className="space-y-3 text-sm text-blue-700 dark:text-blue-300">
-                    <li className="flex items-start space-x-2">
-                      <span className="w-4 h-4 bg-blue-500 rounded-full mt-0.5 flex-shrink-0"></span>
-                      <span>Use structured documents with clear headings</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <span className="w-4 h-4 bg-blue-500 rounded-full mt-0.5 flex-shrink-0"></span>
-                      <span>Ensure text is selectable (not image-based)</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <span className="w-4 h-4 bg-blue-500 rounded-full mt-0.5 flex-shrink-0"></span>
-                      <span>Keep file sizes under 50MB for optimal performance</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <span className="w-4 h-4 bg-blue-500 rounded-full mt-0.5 flex-shrink-0"></span>
-                      <span>Use standard section names when possible</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <span className="w-4 h-4 bg-blue-500 rounded-full mt-0.5 flex-shrink-0"></span>
-                      <span>Remove password protection before upload</span>
-                    </li>
-                  </ul>
+                  <div className="space-y-4">
+                    <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">File Size</h4>
+                      <p className="text-sm text-gray-700 dark:text-gray-300">Maximum 50MB per document</p>
+                    </div>
+                    
+                    <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Text Quality</h4>
+                      <p className="text-sm text-gray-700 dark:text-gray-300">Searchable text preferred over scanned images</p>
+                    </div>
+                    
+                    <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Security</h4>
+                      <p className="text-sm text-gray-700 dark:text-gray-300">Password-protected files not supported</p>
+                    </div>
+                    
+                    <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Language</h4>
+                      <p className="text-sm text-gray-700 dark:text-gray-300">English language documents only</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Best Practices */}
+              <div className="mt-6 bg-gradient-to-r from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-xl border border-gray-200/50 dark:border-gray-700/50 p-6">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">📋 Best Practices for Optimal Analysis</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <h4 className="font-medium text-gray-900 dark:text-white mb-2">Document Structure</h4>
+                    <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
+                      <li>• Use clear, descriptive section headings</li>
+                      <li>• Maintain consistent formatting throughout</li>
+                      <li>• Include table of contents when possible</li>
+                      <li>• Number sections and subsections</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-gray-900 dark:text-white mb-2">Content Quality</h4>
+                    <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
+                      <li>• Ensure text is selectable, not images</li>
+                      <li>• Use standard fonts and formatting</li>
+                      <li>• Avoid excessive whitespace or line breaks</li>
+                      <li>• Include all required RFP sections</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </section>
@@ -221,57 +255,126 @@ export default function TechnicalSupportPage() {
                 Browser Compatibility
               </h2>
               
-              <div className="bg-gradient-to-r from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-xl border border-gray-200/50 dark:border-gray-700/50 p-6">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                      </svg>
-                    </div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white text-sm">Chrome</h4>
-                    <p className="text-xs text-green-600 dark:text-green-400">Fully Supported</p>
-                  </div>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {/* Supported Browsers */}
+                <div className="bg-gradient-to-r from-cyan-50 to-blue-50 dark:from-cyan-900/20 dark:to-blue-900/20 rounded-xl border border-cyan-200/50 dark:border-cyan-700/50 p-6">
+                  <h3 className="text-xl font-semibold text-cyan-800 dark:text-cyan-300 mb-4">Supported Browsers</h3>
                   
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                      </svg>
-                    </div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white text-sm">Firefox</h4>
-                    <p className="text-xs text-green-600 dark:text-green-400">Fully Supported</p>
-                  </div>
-                  
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                      </svg>
-                    </div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white text-sm">Safari</h4>
-                    <p className="text-xs text-green-600 dark:text-green-400">Fully Supported</p>
-                  </div>
-                  
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-yellow-100 dark:bg-yellow-900/30 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <svg className="w-6 h-6 text-yellow-600 dark:text-yellow-400" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-                      </svg>
-                    </div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white text-sm">Edge</h4>
-                    <p className="text-xs text-yellow-600 dark:text-yellow-400">Limited Support</p>
+                  <div className="space-y-3">
+                    {[
+                      { browser: 'Google Chrome', version: '90+', status: 'Recommended', icon: '🟢' },
+                      { browser: 'Mozilla Firefox', version: '88+', status: 'Fully Supported', icon: '🟢' },
+                      { browser: 'Safari', version: '14+', status: 'Supported', icon: '🟡' },
+                      { browser: 'Microsoft Edge', version: '90+', status: 'Supported', icon: '🟡' },
+                      { browser: 'Internet Explorer', version: 'Any', status: 'Not Supported', icon: '🔴' }
+                    ].map((item) => (
+                      <div key={item.browser} className="bg-white dark:bg-gray-800 rounded-lg p-3 flex items-center justify-between">
+                        <div className="flex items-center space-x-3">
+                          <span className="text-lg">{item.icon}</span>
+                          <div>
+                            <h4 className="font-semibold text-gray-900 dark:text-white">{item.browser}</h4>
+                            <p className="text-sm text-gray-600 dark:text-gray-400">Version {item.version}</p>
+                          </div>
+                        </div>
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                          item.status === 'Recommended' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' :
+                          item.status === 'Fully Supported' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' :
+                          item.status === 'Supported' ? 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300' :
+                          'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300'
+                        }`}>
+                          {item.status}
+                        </span>
+                      </div>
+                    ))}
                   </div>
                 </div>
-                
-                <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-                  <h4 className="font-semibold text-blue-800 dark:text-blue-300 mb-2">Recommended Settings:</h4>
-                  <ul className="text-sm text-blue-700 dark:text-blue-300 space-y-1">
-                    <li>• Enable JavaScript</li>
-                    <li>• Allow cookies and local storage</li>
-                    <li>• Disable ad blockers for this site</li>
-                    <li>• Use latest browser version</li>
-                  </ul>
+
+                {/* Browser Settings */}
+                <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl border border-purple-200/50 dark:border-purple-700/50 p-6">
+                  <h3 className="text-xl font-semibold text-purple-800 dark:text-purple-300 mb-4">Required Browser Settings</h3>
+                  
+                  <div className="space-y-4">
+                    <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">✅ JavaScript Enabled</h4>
+                      <p className="text-sm text-gray-700 dark:text-gray-300">Required for file upload and analysis features</p>
+                    </div>
+                    
+                    <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">✅ Cookies Enabled</h4>
+                      <p className="text-sm text-gray-700 dark:text-gray-300">Needed for session management and preferences</p>
+                    </div>
+                    
+                    <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">✅ Local Storage</h4>
+                      <p className="text-sm text-gray-700 dark:text-gray-300">Used for caching and offline functionality</p>
+                    </div>
+                    
+                    <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">⚠️ Ad Blockers</h4>
+                      <p className="text-sm text-gray-700 dark:text-gray-300">May interfere with file uploads - disable if issues occur</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Performance Optimization */}
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                <span className="w-8 h-8 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center text-white text-sm font-bold mr-3">4</span>
+                Performance Optimization
+              </h2>
+              
+              <div className="space-y-6">
+                {/* System Requirements */}
+                <div className="bg-gradient-to-r from-emerald-50 to-green-50 dark:from-emerald-900/20 dark:to-green-900/20 rounded-xl border border-emerald-200/50 dark:border-emerald-700/50 p-6">
+                  <h3 className="text-xl font-semibold text-emerald-800 dark:text-emerald-300 mb-4">Recommended System Requirements</h3>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">💻 Memory (RAM)</h4>
+                      <p className="text-sm text-gray-700 dark:text-gray-300">4GB minimum, 8GB+ recommended for large files</p>
+                    </div>
+                    
+                    <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">🌐 Internet Speed</h4>
+                      <p className="text-sm text-gray-700 dark:text-gray-300">5 Mbps upload speed for smooth file transfers</p>
+                    </div>
+                    
+                    <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">🖥️ Screen Resolution</h4>
+                      <p className="text-sm text-gray-700 dark:text-gray-300">1024x768 minimum, 1920x1080+ recommended</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Performance Tips */}
+                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl border border-blue-200/50 dark:border-blue-700/50 p-6">
+                  <h3 className="text-xl font-semibold text-blue-800 dark:text-blue-300 mb-4">Performance Optimization Tips</h3>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-3">🚀 Speed Improvements</h4>
+                      <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-2">
+                        <li>• Close unnecessary browser tabs</li>
+                        <li>• Restart browser before large uploads</li>
+                        <li>• Use wired internet connection when possible</li>
+                        <li>• Upload during off-peak hours</li>
+                        <li>• Clear browser cache regularly</li>
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-3">📊 File Optimization</h4>
+                      <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-2">
+                        <li>• Compress large PDFs before upload</li>
+                        <li>• Remove unnecessary images or graphics</li>
+                        <li>• Split very large documents if possible</li>
+                        <li>• Use PDF over DOCX for better performance</li>
+                        <li>• Ensure document is text-searchable</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>
@@ -279,9 +382,14 @@ export default function TechnicalSupportPage() {
             {/* Contact Support */}
             <section className="mb-8">
               <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-xl border border-blue-200/50 dark:border-blue-700/50 p-8 text-center">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Still Need Help?</h2>
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                </div>
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Still Experiencing Issues?</h2>
                 <p className="text-gray-700 dark:text-gray-300 mb-6">
-                  If you&apos;re still experiencing issues, our technical support team is here to help.
+                  Our technical support team is here to help resolve any persistent issues you may encounter.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 hover:scale-105 font-semibold shadow-xl">
