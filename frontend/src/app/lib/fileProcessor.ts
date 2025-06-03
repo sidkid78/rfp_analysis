@@ -35,10 +35,14 @@ export class FileProcessor {
         case 'txt':
           text = await this.processTxt(file);
           break;
+        case 'md':
+        case 'markdown':
+          text = await this.processMarkdown(file);
+          break;
         default:
           return {
             document: {},
-            error: 'Unsupported file type. Please upload PDF, DOCX, DOC, or TXT files.'
+            error: 'Unsupported file type. Please upload PDF, DOCX, DOC, TXT, or Markdown files.'
           };
       }
       
@@ -67,6 +71,8 @@ export class FileProcessor {
     if (fileName.endsWith('.docx')) return 'docx';
     if (fileName.endsWith('.doc')) return 'doc';
     if (fileName.endsWith('.txt')) return 'txt';
+    if (fileName.endsWith('.md')) return 'md';
+    if (fileName.endsWith('.markdown')) return 'markdown';
     
     // Fallback to MIME type check
     const mimeType = file.type.toLowerCase();
@@ -140,6 +146,28 @@ export class FileProcessor {
   private static async processTxt(file: File): Promise<string> {
     return await file.text();
   }
+
+  /**
+   * Process Markdown files
+   * @param file Markdown file to process
+   * @returns Extracted text content
+   */
+  private static async processMarkdown(file: File): Promise<string> {
+    const formData = new FormData();
+    formData.append('file', file);
+    
+    const response = await fetch('/api/parse-markdown', {
+      method: 'POST',
+      body: formData
+    });
+    
+    if (!response.ok) {
+      throw new Error('Failed to parse Markdown');
+    }
+    
+    const data = await response.json();
+    return data.text;
+  }
   
   /**
    * Extract RFP sections from document text
@@ -149,12 +177,26 @@ export class FileProcessor {
   private static extractSections(text: string): RFPDocument {
     const document: RFPDocument = {};
     
-    // Define section patterns to look for
+    // Define section patterns to look for (enhanced for markdown templates)
     const sectionPatterns = [
-      { name: 'introduction', pattern: /\b(?:introduction|1\.0\s+introduction|1\s+introduction|i\.\s+introduction)\b/i },
-      { name: 'sow', pattern: /\b(?:statement\s+of\s+work|scope\s+of\s+work|sow|2\.0\s+sow|2\s+sow|ii\.\s+sow)\b/i },
-      { name: 'proposalSubmission', pattern: /\b(?:proposal\s+submission|submission\s+instructions|submission\s+requirements)\b/i },
-      { name: 'evaluationCriteria', pattern: /\b(?:evaluation\s+criteria|evaluation\s+factors|proposal\s+evaluation)\b/i }
+      { name: 'introduction', pattern: /^##?\s*1\.?\s*introduction/i },
+      { name: 'sow', pattern: /^##?\s*2\.?\s*statement\s+of\s+work\s*\(?sow\)?/i },
+      { name: 'proposalSubmission', pattern: /^##?\s*5\.?\s*proposal\s+submission/i },
+      { name: 'evaluationCriteria', pattern: /^##?\s*3\.?\s*evaluation\s+criteria/i },
+      { name: 'contractTerms', pattern: /^##?\s*4\.?\s*contract\s+terms/i },
+      { name: 'priceCostProposal', pattern: /^##?\s*16\.?\s*price\/cost\s+proposal/i },
+      { name: 'periodOfPerformance', pattern: /^##?\s*18\.?\s*period\s+of\s+performance/i },
+      { name: 'keyPersonnel', pattern: /^##?\s*6\.?\s*key\s+personnel/i },
+      { name: 'pastPerformance', pattern: /^##?\s*7\.?\s*past\s+performance/i },
+      { name: 'subcontractingPlan', pattern: /^##?\s*9\.?\s*subcontracting\s+plan/i },
+      { name: 'environmentalConsiderations', pattern: /^##?\s*10\.?\s*environmental\s+considerations/i },
+      { name: 'cybersecurityPlan', pattern: /^##?\s*8\.?\s*cybersecurity\s+plan/i },
+      { name: 'supplyChainRisk', pattern: /^##?\s*11\.?\s*supply\s+chain\s+risk/i },
+      { name: 'contractDataRequirements', pattern: /^##?\s*15\.?\s*contract\s+data/i },
+      { name: 'certificationsRepresentations', pattern: /^##?\s*17\.?\s*certifications/i },
+      { name: 'technicalApproach', pattern: /^##?\s*13\.?\s*technical\s+approach/i },
+      { name: 'managementApproach', pattern: /^##?\s*12\.?\s*management\s+approach/i },
+      { name: 'riskAssessment', pattern: /^##?\s*14\.?\s*risk\s+assessment/i }
     ];
     
     // Split text into lines for analysis

@@ -150,7 +150,11 @@ export default function HelpPage() {
 
                   <div className="space-y-3">
                     {section.articles.map((article) => (
-                      <div key={article.title} className="group flex items-center justify-between p-4 bg-gradient-to-r from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-xl border border-gray-200/50 dark:border-gray-700/50 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 dark:hover:from-blue-900/20 dark:hover:to-indigo-900/20 transition-all duration-300 cursor-pointer">
+                      <a 
+                        key={article.title} 
+                        href={`/help/${section.title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
+                        className="group flex items-center justify-between p-4 bg-gradient-to-r from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-xl border border-gray-200/50 dark:border-gray-700/50 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 dark:hover:from-blue-900/20 dark:hover:to-indigo-900/20 transition-all duration-300 cursor-pointer"
+                      >
                         <div className="flex-1">
                           <h3 className="font-medium text-gray-900 dark:text-white group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors">
                             {article.title}
@@ -171,7 +175,7 @@ export default function HelpPage() {
                         <svg className="w-5 h-5 text-gray-400 group-hover:text-blue-500 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
-                      </div>
+                      </a>
                     ))}
                   </div>
                 </div>

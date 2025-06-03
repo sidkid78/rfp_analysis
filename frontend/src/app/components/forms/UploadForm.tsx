@@ -13,6 +13,7 @@ export default function UploadForm() {
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState('');
   const [processingStatus, setProcessingStatus] = useState('');
+  const [useAI, setUseAI] = useState(false);
   const router = useRouter();
 
   const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -70,7 +71,8 @@ export default function UploadForm() {
         throw new Error('No RFP sections found. Please upload a different file or enter sections manually.');
       }
       
-      const response = await fetch('/api/analyze-rfp', {
+      const endpoint = useAI ? '/api/analyze-rfp-ai' : '/api/analyze-rfp';
+      const response = await fetch(endpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -84,7 +86,8 @@ export default function UploadForm() {
         throw new Error(data.error || 'Failed to analyze RFP');
       }
       
-      router.push(`/results/${data.id}`);
+      const resultsPath = useAI ? `/results/ai/${data.id}` : `/results/${data.id}`;
+      router.push(resultsPath);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
     } finally {
@@ -115,7 +118,7 @@ export default function UploadForm() {
                 title="RFP Document Upload"
                 type="file"
                 onChange={handleFileChange}
-                accept=".pdf,.docx,.doc,.txt"
+                accept=".pdf,.docx,.doc,.txt,.md,.markdown"
                 className="block w-full text-sm text-gray-600 dark:text-gray-400
                   file:mr-4 file:py-3 file:px-6
                   file:rounded-xl file:border-0
@@ -128,7 +131,7 @@ export default function UploadForm() {
                 disabled={manualInput || isSubmitting || isProcessing}
               />
               <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
-                Supports PDF, DOCX, DOC, and TXT files
+                Supports PDF, DOCX, DOC, TXT, and Markdown (.md) files
               </p>
             </div>
           </div>
@@ -284,6 +287,42 @@ export default function UploadForm() {
           {error}
         </div>
       )}
+
+      <div className="mb-6 p-4 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl border border-blue-200 dark:border-blue-800">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-3">
+            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-900 dark:text-white">Analysis Type</h4>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Choose between rule-based or AI-powered analysis</p>
+            </div>
+          </div>
+          <label className="relative inline-flex items-center cursor-pointer">
+            <input
+              type="checkbox"
+              checked={useAI}
+              onChange={(e) => setUseAI(e.target.checked)}
+              className="sr-only peer"
+              disabled={isSubmitting || isProcessing}
+            />
+            <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+            <span className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">
+              {useAI ? '🤖 AI Analysis' : '📊 Rule-based'}
+            </span>
+          </label>
+        </div>
+        {useAI && (
+          <div className="mt-3 p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
+            <p className="text-sm text-blue-800 dark:text-blue-200">
+              <strong>AI Analysis:</strong> Uses Google Gemini for sophisticated, context-aware analysis with natural language insights and recommendations.
+            </p>
+          </div>
+        )}
+      </div>
       
       <button
         type="submit"
